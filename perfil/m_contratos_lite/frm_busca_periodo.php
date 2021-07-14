@@ -319,7 +319,7 @@ else
 						<label>Instituição *</label><img src="images/loading.gif" class="loading" style="display:none" />
 						<select class="form-control" name="instituicao" id="instituicao" required>
 							<option value="">Selecione</option>
-							<?php geraOpcao("ig_instituicao","","") ?>
+							<?php geraOpcao("ig_instituicao","","", true) ?>
 						</select>
 					</div>
 				</div>

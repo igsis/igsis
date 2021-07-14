@@ -369,12 +369,17 @@
 			}
 		}
 	}
-	function geraOpcao($tabela,$select,$instituicao)
+	function geraOpcao($tabela,$select,$instituicao, $publicado = false)
 	{
+	    if ($publicado) {
+	        $wherePublicado = "AND publicado = '1'";
+        } else {
+	        $wherePublicado = "";
+        }
 		//gera os options de um select
 		if($instituicao != "")
 		{
-			$sql = "SELECT * FROM $tabela WHERE idInstituicao = $instituicao OR idInstituicao = 999 ORDER BY 2 ASC";
+			$sql = "SELECT * FROM $tabela WHERE idInstituicao = $instituicao OR idInstituicao = 999 $wherePublicado ORDER BY 2 ASC";
 		}
 		else
 		{
